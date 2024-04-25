@@ -28,7 +28,7 @@ import (
 	"github.com/rancher/shepherd/extensions/workloads/pods"
 	"github.com/rancher/shepherd/pkg/nodes"
 	"github.com/rancher/shepherd/pkg/wait"
-	wranglername "github.com/rancher/wrangler/pkg/name"
+	wranglername "github.com/rancher/wrangler/v2/pkg/name"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
