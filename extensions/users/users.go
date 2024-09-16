@@ -3,7 +3,6 @@ package users
 import (
 	"context"
 	"fmt"
-	"strings"
 	"time"
 
 	"github.com/rancher/norman/types"
@@ -84,7 +83,7 @@ func AddProjectMember(rancherClient *rancher.Client, project *management.Project
 		RoleTemplateID:  projectRole,
 	}
 
-	name := strings.Split(project.ID, ":")[1]
+	// name := strings.Split(project.ID, ":")[1]
 
 	adminClient, err := rancher.NewClient(rancherClient.RancherConfig.AdminToken, rancherClient.Session)
 	if err != nil {
@@ -92,7 +91,7 @@ func AddProjectMember(rancherClient *rancher.Client, project *management.Project
 	}
 
 	opts := metav1.ListOptions{
-		FieldSelector:  "metadata.name=" + name,
+		// FieldSelector:  "metadata.name=" + name,
 		TimeoutSeconds: &timeout,
 	}
 	watchInterface, err := adminClient.GetManagementWatchInterface(management.ProjectType, opts)
